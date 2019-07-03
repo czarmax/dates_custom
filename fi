@@ -1,0 +1,10 @@
+# days difference without taking
+# in account the WeekEnd
+from datetime import datetime, timedelta
+
+def yesterday_working_days():
+    t = datetime.now()
+    if t.weekday() == 0:
+        t = t - timedelta(days=3)
+    t = t - timedelta(days=1)
+    return t.strftime('%Y-%m-%d')
